@@ -49,8 +49,8 @@ public class HelloGridBagLayout extends JFrame {
         controlPanel.add(panel);
 
         this.setLayout(new GridLayout(2,1));
-        this.add(headerLabel);
         this.add(controlPanel);
+        this.add(headerLabel);
 
         this.setSize(400,400);
 
