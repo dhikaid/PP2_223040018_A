@@ -26,6 +26,9 @@ public class MemberFrame extends JFrame {
         JLabel labelInput = new JLabel("Nama: ");
         labelInput.setBounds(15,40,350,10);
 
+        textFieldNama = new JTextField();
+        textFieldNama.setBounds(15,60,350,30);
+
         JLabel labelJenis = new JLabel("Jenis Member");
         labelJenis.setBounds(15,100,350,10);
 

@@ -6,64 +6,44 @@ import javax.swing.*;
 import javax.swing.table.*;
 import java.util.*;
 import model.*;
-import view.jenismember.JenisMemberFrame;
 import view.member.MemberFrame;
-import dao.*;
+import dao.MemberDao;
 
 public class MainFrame extends JFrame {
-    private JenisMemberFrame jenisMemberFrame;
-    private MemberFrame memberFrame;
+    private MemberFrame jenisMemberFrame;
     private JButton buttonJenisMember;
-    private JButton buttonMember;
-    private JenisMemberDao jenisMemberDao;
     private MemberDao memberDao;
 
     public MainFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(400, 500);
         // Inisialisasi DAO
-        this.jenisMemberDao = new JenisMemberDao();
         this.memberDao = new MemberDao();
-            // Inisialisasi frame
-            this.jenisMemberFrame = new JenisMemberFrame(jenisMemberDao);
-            this.memberFrame = new MemberFrame(memberDao, jenisMemberDao);
+
+        // Inisialisasi frame
+        this.jenisMemberFrame = new MemberFrame(memberDao);
+
 
         this.setLayout(new FlowLayout());
         MainButtonActionListener actionListener = new MainButtonActionListener(this);
 
         this.buttonJenisMember = new JButton("Jenis Member");
-        this.buttonMember = new JButton("Member");
 
         this.buttonJenisMember.addActionListener(actionListener);
-        this.buttonMember.addActionListener(actionListener);
-
 
         this.add(buttonJenisMember);
-        this.add(buttonMember);
     }
 
     public JButton getButtonJenisMember(){
         return buttonJenisMember;
     }
 
-    public JButton getButtonMember(){
-        return buttonMember;
-    }
-
     public void showJenisMemberFrame(){
         if(jenisMemberFrame != null){
-            jenisMemberFrame = new JenisMemberFrame(jenisMemberDao);
+            jenisMemberFrame = new MemberFrame(memberDao);
         }
 
         jenisMemberFrame.setVisible(true);
-    }
-
-    public void showMemberFrame(){
-        if(memberFrame == null){
-            memberFrame = new MemberFrame(memberDao, jenisMemberDao);
-        }
-        memberFrame.populateComboJenis();
-        memberFrame.setVisible(true);
     }
 
     public static void main(String[] args) {

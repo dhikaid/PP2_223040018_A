@@ -1,6 +1,9 @@
 {
-  "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "libs/mysql-connector-j-9.1.0.jar"
-  ]
+  "java.project.referencedLibraries": {
+    "include": [
+      "lib/**/*.jar",
+      "c:\\Users\\bhadr\\Downloads\\mysql-connector-j-8.0.31\\mysql-connector-j-8.0.31\\mysql-connector-j-8.0.31.jar"
+    ],
+    "exclude": ["libs/mysql-connector-j-9.1.0.jar"]
+  }
 }

@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class MysqlConnection {
-    private final static String DB_URL = "jdbc:mysql://localhost:3306/pp2_membership";
+    private final static String DB_URL = "jdbc:mysql://localhost:3306/pp2_biodata";
     private final static String DB_USER = "root";
     private final static String DB_PASS = "";
     
